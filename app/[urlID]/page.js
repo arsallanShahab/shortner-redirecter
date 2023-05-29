@@ -1,12 +1,15 @@
 "use client";
-import Head from "next/head";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+
+export const metadata = {
+  title: "Redirecting...",
+  description: "Redirecting to the original URL...",
+};
 
 export default function Page({ params }) {
   const router = useRouter();
   const [error, setError] = useState(null);
-
   const handleRedirect = async () => {
     try {
       const url = `/api/redirect/?urlID=${params.urlID}`;
@@ -31,15 +34,13 @@ export default function Page({ params }) {
   };
 
   useEffect(() => {
-    handleRedirect();
-  }, [params.urlID, router]);
+    if (params.urlID) {
+      handleRedirect();
+    }
+  }, [params.urlID]);
 
   return (
     <>
-      <Head>
-        <title>Redirecting...</title>
-        <meta name="description" content="Redirecting..." />
-      </Head>
       <main className="my-5">
         {!error && <p>Redirecting...</p>}
         {error && (
