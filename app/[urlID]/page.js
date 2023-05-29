@@ -1,11 +1,7 @@
 "use client";
+import Head from "next/head";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-
-export const metadata = {
-  title: "Redirecting...",
-  description: "Redirecting to the original URL...",
-};
 
 export default function Page({ params }) {
   const router = useRouter();
