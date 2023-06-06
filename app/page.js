@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -21,9 +22,12 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col gap-4 md:flex-row w-full items-center justify-center">
-            <button className="bg-[#ecf976] hover:opacity-80 active:scale-95 text-sm font-medium px-5 py-3 rounded-lg duration-150">
+            <Link
+              href={"https://shtr-shortner.vercel.app/"}
+              className="bg-[#ecf976] hover:opacity-80 active:scale-95 text-sm font-medium px-5 py-3 rounded-lg duration-150"
+            >
               Get Started
-            </button>
+            </Link>
           </div>
         </div>
       </main>
