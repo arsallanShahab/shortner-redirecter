@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <main
         className={cn(
-          "font-sora flex flex-col items-center text-center justify-center pt-40 pb-16 px-10"
+          "font-sora flex flex-col items-center text-center justify-center h-screen py-10 px-10"
         )}
       >
         <div className="flex flex-col items-center justify-center h-full">
@@ -21,7 +21,7 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col gap-4 md:flex-row w-full items-center justify-center">
-            <button className="bg-gray-50 ring-1 ring-gray-200 hover:bg-gray-100 active:scale-95 active:bg-gray-200 text-sm font-medium px-5 py-3 rounded-lg duration-150">
+            <button className="bg-[#ecf976] hover:opacity-80 active:scale-95 text-sm font-medium px-5 py-3 rounded-lg duration-150">
               Get Started
             </button>
           </div>

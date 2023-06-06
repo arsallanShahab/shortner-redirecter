@@ -7,7 +7,7 @@ export async function GET(request, res) {
   if (!urlID) {
     return new Response(
       JSON.stringify({
-        error: "Url not found",
+        error: `Missing urlID`,
       }),
       {
         headers: {
@@ -20,8 +20,8 @@ export async function GET(request, res) {
   }
   try {
     const client = await clientPromise;
-    const db = await client.db();
-    const urls = await db.collection("urls");
+    const db = client.db();
+    const urls = db.collection("urls");
     const result = await urls.findOneAndUpdate(
       {
         nanoId: urlID,
