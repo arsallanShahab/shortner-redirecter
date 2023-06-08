@@ -1,10 +1,8 @@
 "use client";
 import Head from "next/head";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Page({ params }) {
-  const router = useRouter();
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -21,7 +19,8 @@ export default function Page({ params }) {
         console.log("response", response);
         const data = await response.json();
         if (data.ok) {
-          router.push(data.url);
+          // redirect to the url
+          window.location.href = data.url;
         } else {
           setError(data.error);
           console.log("Error redirecting:", data.error);
@@ -34,7 +33,7 @@ export default function Page({ params }) {
     if (params.urlID) {
       handleRedirect();
     }
-  }, [params, router]);
+  }, [params.urlID]);
 
   return (
     <>

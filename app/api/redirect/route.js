@@ -3,6 +3,7 @@ import clientPromise from "@/lib/mongodb";
 export async function GET(request, res) {
   const { searchParams } = new URL(request.url);
   const urlID = searchParams.get("urlID");
+  console.log(`urlID: ${urlID}`);
 
   if (!urlID) {
     return new Response(
@@ -36,7 +37,7 @@ export async function GET(request, res) {
         },
       }
     );
-
+    console.log(`result: ${JSON.stringify(result)}`);
     if (result.value) {
       return new Response(
         JSON.stringify({
