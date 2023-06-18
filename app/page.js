@@ -23,7 +23,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-4 md:flex-row w-full items-center justify-center">
             <Link
-              href={"https://shtr-shortner.vercel.app/"}
+              href={"https://app.shortner.cloud"}
               className="bg-[#ecf976] hover:opacity-80 active:scale-95 text-sm font-medium px-5 py-3 rounded-lg duration-150"
             >
               Get Started

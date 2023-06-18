@@ -42,7 +42,7 @@ export default function Page({ params }) {
     if (params.urlID) {
       handleRedirect();
     }
-  }, [params.urlID]);
+  }, [params.urlID, router]);
 
   return (
     <>
